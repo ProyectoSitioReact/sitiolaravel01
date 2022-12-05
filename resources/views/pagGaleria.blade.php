@@ -1,4 +1,4 @@
-@extension('pagPlantilla')
+@extends('pagPlantilla')
 
 @section('titulo')
     <h1>Página de galeria</h1>

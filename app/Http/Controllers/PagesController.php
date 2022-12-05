@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Estudiante;
+
 class PagesController extends Controller
 {
     public function fnIndex () {
@@ -11,12 +13,15 @@ class PagesController extends Controller
     }
 
     public function fnLista () {
-        return view('pagLista');
+        $xAlumnos = Estudiante::all();
+        return view('pagLista', compact('xAlumnos'));
     }
 
     public function fnGaleria ($numero=0) {
+        $valor = $numero;
+        $otro = 25;
         //return "Foto de codigo: ".$numero;
-        return view('pagGaleria', ['valor'=>15]);
+        return view('pagGaleria', compact('valor', 'otro'));
     }
     
 }

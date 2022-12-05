@@ -19,12 +19,8 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/', [PagesController::class, 'fnIndex'])->name('xIndex');
 
-Route::get('/galeria/{numero?}', function ($numero) {
-    return "Foto de codigo" .$numero;
+Route::get('/galeria/{numero?}', [PagesController::class, 'fnGaleria'] )->where('numero', '[0-9]+')->name('xGaleria');
 
-})->where('numero', '[0-9]+');
-
-Route::view('/galeria', 'pagGaleria', ['valor'=>15])->name('xGaleria');
 
 Route::get('/lista', [PagesController::class, 'fnLista']) -> name('xLista');
 

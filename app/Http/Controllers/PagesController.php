@@ -16,7 +16,7 @@ class PagesController extends Controller
 
     public function fnGaleria ($numero=0) {
         //return "Foto de codigo: ".$numero;
-        return view('pagGaleria', ['valor'=>$numero, 'otro'=>25]);
+        return view('pagGaleria', ['valor'=>15]);
     }
     
 }
